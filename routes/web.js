@@ -5,7 +5,7 @@ function initroutes(app) {
   //api home route
   app.get("/", homeController().home);
   //api test route
-  app.get("/api/countr", testcontroller().test);
+  app.get("/api/test", testcontroller().test);
   //get country route
   app.get("/api/country", countryController().getCountry);
 }
