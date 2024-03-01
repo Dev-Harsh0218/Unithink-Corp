@@ -7,7 +7,7 @@ const app = express();
 
 //cors policy
 const corsOptions = {
-  origin: 'http://localhost:5173', // Set the origin you want to allow
+  origin: '*', // Set the origin you want to allow
   methods: ['GET', 'POST'], // Specify which HTTP methods are allowed
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify which headers are allowed
   credentials: true // Allow credentials (cookies, authorization headers, etc.)
