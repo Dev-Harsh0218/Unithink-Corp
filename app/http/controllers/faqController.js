@@ -5,7 +5,6 @@ function faqController() {
         async getfaq(req, res) {
             try {
                 const results = await faq.find().exec();
-                console.log(results)
                 res.send(results);
             } catch (error) {
                 console.error("Error fetching country data:", error);

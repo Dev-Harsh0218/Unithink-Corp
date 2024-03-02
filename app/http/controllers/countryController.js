@@ -5,7 +5,6 @@ function countryController() {
     async getCountry(req, res) {
       try {
         const results = await Country.find().select("c_id c_name c_about c_worldrank num_uni").exec();
-        console.log(results)
         res.send(results);
       } catch (error) {
         console.error("Error fetching country data:", error);
