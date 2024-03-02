@@ -2,12 +2,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require('cors');
+require('dotenv').config()
 // Server creation
 const app = express();
 
 //cors policy
 const corsOptions = {
-  origin: 'http://localhost:5173', // Set the origin you want to allow
+  origin: '*', // Set the origin you want to allow
   methods: ['GET', 'POST'], // Specify which HTTP methods are allowed
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify which headers are allowed
   credentials: true // Allow credentials (cookies, authorization headers, etc.)
@@ -19,11 +20,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // MongoDB connection
-mongo_uri="mongodb+srv://ncompvt:jWyC6B7xwouz01e0@cluster0.rdytmzt.mongodb.net/UniThink?retryWrites=true&w=majority";
-
 async function connectToDatabase() {
   try {
-    await mongoose.connect(mongo_uri);
+    await mongoose.connect(process.env.mongo_uri);
     console.log("MongoDB connected");
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);

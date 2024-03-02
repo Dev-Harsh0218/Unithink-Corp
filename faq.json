@@ -1,0 +1,54 @@
+[
+    {
+        "faq_id":"faq001",
+      "faq_ques": "What are the benefits of studying abroad?",
+      "faq_ans": "Explore the academic and cultural advantages of studying in a foreign country."
+    },
+    {   
+        "faq_id":"faq002",
+        "faq_ques": "How do I choose the right study destination for me?",
+        "faq_ans": "Understand the factors to consider when selecting a study destination that aligns with your academic, cultural, and personal preferences."
+      },
+      { 
+        "faq_id":"faq003",
+        "faq_ques": "What are the different types of study abroad programs available?",
+        "faq_ans": "Explore options such as exchange programs, direct enrollment, summer/winter programs, and more."
+      },
+      { 
+        "faq_id":"faq004",
+        "faq_ques": "What are the admission requirements for studying abroad?",
+        "faq_ans": "Learn about the academic prerequisites, language proficiency tests, and other requirements needed for admission to universities abroad."
+      },
+      { 
+        "faq_id":"faq005",
+        "faq_ques": "Are scholarships available for international students?",
+        "faq_ans": "Discover scholarship opportunities and financial aid options for international students pursuing higher education abroad."
+      },
+      { 
+        "faq_id":"faq006",
+        "faq_ques": "How do I navigate the visa application process?",
+        "faq_ans": "Understand the visa requirements, application procedures, and documentation needed to study abroad legally."
+      },
+      { 
+        "faq_id":"faq007",
+        "faq_ques": "What support services are available for international students?",
+        "faq_ans": "Learn about resources such as international student advisors, language support, housing assistance, and student organizations offered by universities abroad."
+      },
+      { 
+        "faq_id":"faq008",
+        "faq_ques": "How can studying abroad enhance my career prospects?",
+        "faq_ans": "Explore the professional benefits of studying abroad, including gaining cross-cultural skills, expanding your global network, and increasing employability."
+      },
+      { 
+        "faq_id":"faq009",
+        "faq_ques": "What are the challenges of studying abroad, and how can I overcome them?",
+        "faq_ans": "Address concerns such as cultural adjustment, homesickness, language barriers, and academic differences, and discover strategies for overcoming these challenges."
+      },
+      { 
+        "faq_id":"faq010",
+        "faq_ques": "What are the options for post-study opportunities, such as employment or further education?",
+        "faq_ans": "Explore pathways for post-graduation, including work permits, internships, graduate studies, and returning to your home country with enhanced skills and experiences."
+      }
+    ]
+      
+  
