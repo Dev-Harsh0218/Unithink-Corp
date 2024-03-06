@@ -13,6 +13,6 @@ function initroutes(app) {
   //faq route
   app.get("/api/faq",faqController().getfaq);
   //book_short_session
-  app.post("/api/shortSess",consultController().bookShortSess)
+  app.post("/api/SessShort",consultController().bookSessShort)
 }
 module.exports = initroutes;

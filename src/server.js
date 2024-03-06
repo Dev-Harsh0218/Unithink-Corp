@@ -1,17 +1,17 @@
 // Importing required modules
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require('cors');
-require('dotenv').config()
+const cors = require("cors");
+require("dotenv").config();
 // Server creation
 const app = express();
 
 //cors policy
 const corsOptions = {
-  origin: '*', // Set the origin you want to allow
-  methods: ['GET', 'POST'], // Specify which HTTP methods are allowed
-  allowedHeaders: ['Content-Type', 'Authorization'], // Specify which headers are allowed
-  credentials: true // Allow credentials (cookies, authorization headers, etc.)
+  origin: "*", // Set the origin you want to allow
+  methods: ["GET", "POST"], // Specify which HTTP methods are allowed
+  allowedHeaders: ["Content-Type", "Authorization"], // Specify which headers are allowed
+  credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 };
 
 app.use(cors(corsOptions));
@@ -40,4 +40,3 @@ const PORT = 7000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
