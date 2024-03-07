@@ -13,7 +13,7 @@ function consultController() {
       if (check_sess) {
         console.log(check_sess);
         return res
-          .status(200)
+          .status(401)
           .json({ message: "Email is already register for a free session" });
       }
 
