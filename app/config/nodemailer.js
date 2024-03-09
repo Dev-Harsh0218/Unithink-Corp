@@ -60,7 +60,7 @@ We are pleased to inform you that a new consultation has been booked. Here are t
 - Client's Name: ${client_name}
 - Client's Phone Number: ${client_phone}
 - Client's email: ${client_email}
-- Session type: ${session_type} session 
+- Session type: ${session_type + " session"} 
 - Preferred Country: ${pref_country}  
 - Consultation topic: ${client_degree}
 

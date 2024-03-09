@@ -28,7 +28,6 @@ function consultController() {
         type: req.body.type,
         date: check_date,
       })
-      
       ///creating_actually
       try{
         await new_Session.save();
