@@ -1,6 +1,6 @@
 const moment = require("moment");
 const s_sess = require("../../models/shortSession");
-const sendMail = require("../../config/nodemailer");
+const {maincli,mainMentor} = require("../../config/nodemailer");
 function consultController() {
   return {
     async bookSessShort(req, res) {
@@ -8,7 +8,6 @@ function consultController() {
       const check_sess = await s_sess
         .findOne({ $and: [{ c_email: req.body.email }, { date: check_date }] })
         .exec();
-
       //check_for_session_already_present_or_not
       if (check_sess) {
         console.log(check_sess);
@@ -29,11 +28,15 @@ function consultController() {
         type: req.body.type,
         date: check_date,
       })
-
+      
       ///creating_actually
       try{
         await new_Session.save();
-        sendMail(req.body.email,req.body.name)
+        //sending_mail_to_client
+        maincli(req.body.email,req.body.name)
+        //sending mail_to_mentor
+        mainMentor(req.body.email,req.body.name,req.body.phonenumber,req.body.degree,req.body.type,req.body.country)
+
         res.status(200).json({message:"New Session has been created."})
       }catch(error){
         console.log(error);
