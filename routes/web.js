@@ -10,7 +10,7 @@ function initroutes(app) {
   app.get("/api/test", testcontroller().test);
   //get country routes
   app.get("/api/country", countryController().getCountry);
-  app.get("/api/specCountry", countryController().getSpecCountry);
+  app.get("/api/specCountry/:name", countryController().getSpecCountry);
   //faq route
   app.get("/api/faq",faqController().getfaq);
   //book_short_session
