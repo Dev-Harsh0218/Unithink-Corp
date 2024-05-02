@@ -8,8 +8,9 @@ function initroutes(app) {
   app.get("/", homeController().home);
   //api test route
   app.get("/api/test", testcontroller().test);
-  //get country route
+  //get country routes
   app.get("/api/country", countryController().getCountry);
+  app.get("/api/specCountry", countryController().getSpecCountry);
   //faq route
   app.get("/api/faq",faqController().getfaq);
   //book_short_session

@@ -1,4 +1,4 @@
-require('dotenv').config;
+ require('dotenv').config;
 const nodemailer = require("nodemailer");
 const mentor_mail="unithinkeducationinternational@gmail.com";
 const mentor_name="Dr. Sheelan Misra"

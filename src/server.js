@@ -32,11 +32,11 @@ async function connectToDatabase() {
 }
 connectToDatabase();
 
-// Routes
-require("../routes/web")(app);
+  // Routes
+  require("../routes/web")(app);
 
-// Start the server
-const PORT = 7000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+  // Start the server
+  const PORT = 7000;
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
