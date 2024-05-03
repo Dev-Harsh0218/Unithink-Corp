@@ -15,7 +15,7 @@ function countryController() {
 
     async getSpecCountry(req,res){
       try{
-        const results= await SpecCountry.find({c_name:req.params.name}).select("top_image c_name c_worldrank num_uni about top_reasons uni_list average_fee num_stud_international avg_cost_living avg_hostel_price visa_type visa_processing_time english_tests min_english_score").exec();
+        const results= await SpecCountry.find({c_id:req.params.c_id}).select("top_image c_name c_worldrank num_uni about top_reasons uni_list average_fee num_stud_international avg_cost_living avg_hostel_price visa_type visa_processing_time english_tests min_english_score").exec();
         return res.status(200).send(results);
       }
       catch(error){
