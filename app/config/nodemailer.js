@@ -1,22 +1,27 @@
-require("dotenv").config;
+require("dotenv").config();
 const nodemailer = require("nodemailer");
+
 const mentor_mail = "info@unithink.in";
 const mentor_name = "Dr. Sheelan Misra";
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  port: 587,
-  secure: true, // Use `true` for port 465, `false` for all other ports
+const sender_email = process.env.nodeMailerMail;
+const sender_pass = process.env.nodeMailerMailPass;
+const sender_name = 'Unithink Info 🎓';
+
+let transporter = nodemailer.createTransport({
+  host: 'smtpout.secureserver.net', // SMTP server of GoDaddy
+  port: 465, // Port (usually 465 for secure connection)
+  secure: true, // Use SSL/TLS
   auth: {
-    user: process.env.nodeMailerMail,
-    pass: process.env.nodeMailerMailPass,
-  },
+    user: sender_email, // Your GoDaddy email address
+    pass: sender_pass // Your GoDaddy email password
+  }
 });
 
 // async..await is not allowed in global scope, must use a wrapper
 async function maincli(client_email, client_name) {
   // send mail with defined transport object
   const info = await transporter.sendMail({
-    from: "unithinkeducationinternational@gmail.com", // sender address
+    from: `"${sender_name}" <${sender_email}>`, // sender address with custom name
     to: client_email, // list of receivers
     subject: "Confirmation: Your Session Has Been Successfully Booked", // Subject line
     text: `
@@ -44,19 +49,12 @@ P.S. Don't hesitate to follow us on social media for the latest updates and`,
   });
 
   console.log("Message sent: %s", info.messageId);
-  // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
 }
 
-async function mainMentor(
-  client_email,
-  client_name,
-  client_phone,
-  service_type,
-  check_date
-) {
+async function mainMentor(client_email, client_name, client_phone, service_type, check_date) {
   // send mail with defined transport object
   const info = await transporter.sendMail({
-    from: "unithinkeducationinternational@gmail.com", // sender address
+    from: `"${sender_name}" <${sender_email}>`, // sender address with custom name
     to: mentor_mail, // list of receivers
     subject: `Confirmation: New session Booking by ${client_name}`, // Subject line
     text: `
@@ -64,11 +62,12 @@ Dear ${mentor_name},
 
 We are pleased to inform you that a new consultation has been booked. Here are the details of the booking:
 
-- Client's Name: ${client_name}
+- Client's Name: ${client_email}
 - Client's Phone Number: ${client_phone}
-- Client's email: ${client_email}
-- Service Type : ${service_type}
-- Booking_Date : ${check_date}
+- Client's email: ${client_name}
+- Service Type: ${service_type}
+- Booking Date: ${check_date}
+
 Best Regards,
 Harsh Bhardwaj
 Developer
@@ -76,7 +75,6 @@ Developer
   });
 
   console.log("Message sent: %s", info.messageId);
-  // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
 }
 
 module.exports = { maincli, mainMentor };
