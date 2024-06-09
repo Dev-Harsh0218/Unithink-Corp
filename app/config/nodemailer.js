@@ -51,9 +51,8 @@ async function mainMentor(
   client_email,
   client_name,
   client_phone,
-  client_degree,
-  session_type,
-  pref_country
+  service_type,
+  check_date
 ) {
   // send mail with defined transport object
   const info = await transporter.sendMail({
@@ -68,10 +67,8 @@ We are pleased to inform you that a new consultation has been booked. Here are t
 - Client's Name: ${client_name}
 - Client's Phone Number: ${client_phone}
 - Client's email: ${client_email}
-- Session type: ${session_type + " session"} 
-- Preferred Country: ${pref_country}  
-- Consultation topic: ${client_degree}
-
+- Service Type : ${service_type}
+- Booking_Date : ${check_date}
 Best Regards,
 Harsh Bhardwaj
 Developer
