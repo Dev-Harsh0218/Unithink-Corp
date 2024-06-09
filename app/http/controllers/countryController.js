@@ -5,7 +5,7 @@ function countryController() {
   return {
     async getCountry(req, res) {
       try {
-        const results = await Country.find().select("c_id c_name c_about c_worldrank num_uni img_link").exec();
+        const results = await Country.find().select("c_id top_image c_name c_worldrank num_uni c_about top_reasons").exec();
         return res.send(results);
       } catch (error) {
         console.error("Error fetching country data:", error);
