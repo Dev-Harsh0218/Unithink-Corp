@@ -30,6 +30,7 @@ async function connectToDatabase() {
     process.exit(1);
   }
 }
+
 connectToDatabase();
 
   // Routes
